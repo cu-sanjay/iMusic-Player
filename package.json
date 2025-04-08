@@ -1,30 +1,24 @@
 {
-    "name": "utubemusic",
-    "version": "1.0.0",
-    "description": "A simple tool to extract audio from video links",
-    "main": "app.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "nodemon app.js"
-    },
-    "keywords": ["audio", "video", "downloader"],
-    "author": "Sannjay",
-    "license": "ISC",
-    "dependencies": {
-      "@distube/ytdl-core": "^4.16.6",
-      "dotenv": "^16.4.1",
-      "ejs": "^3.1.9",
-      "express": "^4.18.2",
-      "ffmpeg-static": "^5.2.0",
-      "fluent-ffmpeg": "^2.1.3",
-      "node-fetch": "^2.7.0",
-      "youtube-scraper-data": "^1.1.2",
-      "youtube-dl-exec": "^3.0.20",
-      "ytdl-core": "^4.11.5"
-    },
-    "type": "module",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/cu-sanjay/MyYoutube.git"
-    }
+  "name": "utubemusic",
+  "version": "1.0.0",
+  "description": "A simple tool to extract audio from video links",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "keywords": ["audio", "video", "downloader"],
+  "author": "cusanjay",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "ytdl-core": "^4.11.5"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cu-sanjay/MyYoutube.git"
   }
+}
