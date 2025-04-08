@@ -1,14 +1,19 @@
 import express from 'express';
-import ytDlp from 'yt-dlp-exec'; 
+import ytdlp from 'youtube-dl-exec';
 import path from 'path';
 import fs from 'fs';
 import os from 'os';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
-app.use(express.static("public"));
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -27,7 +32,7 @@ app.post('/extract-audio', async (req, res) => {
         fs.copyFileSync(secretCookiePath, tempCookiePath);
 
         // Get stream title
-        let audioTitle = await ytDlp(streamLink, {
+        let audioTitle = await ytdlp(streamLink, {
             print: '%(title)s',
             cookies: tempCookiePath
         });
@@ -37,8 +42,8 @@ app.post('/extract-audio', async (req, res) => {
         res.setHeader('Content-Disposition', `attachment; filename="${audioTitle}.mp3"`);
         res.setHeader('Content-Type', 'audio/mpeg');
 
-        // Stream audio directly using yt-dlp-exec
-        const audioStream = ytDlp.exec(streamLink, {
+        // Stream audio directly
+        const audioStream = ytdlp.exec(streamLink, {
             cookies: tempCookiePath,
             format: 'bestaudio',
             output: '-', // stream to stdout
