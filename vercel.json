@@ -2,22 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/pages/index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "src/pages/api/convert.js",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/next"
     }
   ],
   "routes": [
     {
-      "src": "/api/convert",
-      "dest": "/api/convert"
+      "src": "/api/download",
+      "methods": ["POST"],
+      "dest": "/api/download"
     },
     {
       "src": "/(.*)",
-      "dest": "/index"
+      "dest": "/"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
