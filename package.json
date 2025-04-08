@@ -1,24 +1,31 @@
 {
-  "name": "utubemusic",
+  "name": "utubemusic-converter",
   "version": "1.0.0",
-  "description": "A simple tool to extract audio from video links",
+  "description": "Convert YouTube videos to MP3. Hosted on Vercel.",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
     "start": "node app.js"
   },
-  "keywords": ["audio", "video", "downloader"],
-  "author": "cusanjay",
-  "license": "ISC",
+  "keywords": [
+    "youtube",
+    "mp3",
+    "converter",
+    "utubemusic",
+    "vercel"
+  ],
+  "author": "cu-sanjay",
+  "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.4.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "ytdl-core": "^4.11.5"
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "youtube-dl-exec": "^2.2.2"
   },
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cu-sanjay/MyYoutube.git"
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }

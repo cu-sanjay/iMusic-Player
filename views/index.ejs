@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="/images/utubemusic-icon.png" type="image/x-icon">
-    <title>UtubeMusic Downloader</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>utubemusic - YouTube to MP3</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/images/utubemusic-icon.png" type="image/png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="main-container">
-        <img src="/images/UTUBE White.png" alt="UtubeMusic Logo" class="logo">
-        <form action="/extract-audio" method="POST" id="form">
-            <p>Created by <a href="https://github.com/cu-sanjay/MyYoutube">Sannjay</a></p>
-            <h1><i class="fa-solid fa-music"></i> UtubeMusic Audio Extractor</h1>
-            <h4>Paste Your Video Link</h4>
-            <div class="input-group">
-                <input type="text" name="url" placeholder="Video link here">
-                <button type="submit" id="extract-btn">Get Audio Now</button>
-            </div>
-            <div>
-                <p><b>Hold tight, audio processing takes 20-30 seconds!</b></p>
-            </div>
-        </form>
+  <div class="container">
+    <div class="branding">
+      <img src="/images/UTUBE Logo.png" alt="utubemusic logo" />
     </div>
+    <form action="/convert-mp3" method="POST" id="form">
+      <h1>utubemusic</h1>
+      <p>Convert YouTube videos to high-quality MP3</p>
+      <input type="text" name="url" placeholder="Enter YouTube URL..." required />
+      <button type="submit"><i class="fas fa-download"></i> Convert</button>
+    </form>
+    <p class="footer">Built by <a href="https://github.com/cu-sanjay" target="_blank">cu-sanjay</a> • Hosted on <a href="https://vercel.com" target="_blank">Vercel</a></p>
+  </div>
 </body>
 </html>
