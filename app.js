@@ -1,8 +1,8 @@
 import express from 'express';
-import youtubedl from 'youtube-dl-exec';
+import ytdl from 'ytdl-core';
+import ffmpegPath from 'ffmpeg-static';
+import ffmpeg from 'fluent-ffmpeg';
 import path from 'path';
-import fs from 'fs';
-import os from 'os';
 import { fileURLToPath } from 'url';
 
 const app = express();
@@ -20,47 +20,39 @@ app.get('/', (req, res) => {
 });
 
 app.post('/convert-mp3', async (req, res) => {
+  const videoURL = req.body.url;
+
   try {
-    const videoUrl = req.body.url;
-    const videoIdMatch = videoUrl.match(/(?:v=|\/)([0-9A-Za-z_-]{11})/);
-    if (!videoIdMatch) return res.status(400).send('Invalid YouTube URL');
+    if (!ytdl.validateURL(videoURL)) {
+      return res.status(400).send('Invalid YouTube URL');
+    }
 
-    // Get video metadata
-    const metadata = await youtubedl(videoUrl, {
-      dumpSingleJson: true
-    });
+    const info = await ytdl.getInfo(videoURL);
+    let title = info.videoDetails.title
+      .replace(/[^\w\s]/gi, '')
+      .replace(/\s+/g, '_')
+      .substring(0, 100);
 
-    let videoTitle = metadata.title || 'utubemusic_audio';
-    videoTitle = videoTitle.trim().replace(/[^\w\s]/gi, '').replace(/\s+/g, '_');
-
-    res.setHeader('Content-Disposition', `attachment; filename="${videoTitle}.mp3"`);
+    res.setHeader('Content-Disposition', `attachment; filename="${title}.mp3"`);
     res.setHeader('Content-Type', 'audio/mpeg');
 
-    const subprocess = youtubedl.exec(videoUrl, {
-      format: 'bestaudio[ext=m4a]/bestaudio/best',
-      output: '-',
-      quiet: true
-    });
-
-    subprocess.stdout.pipe(res);
-
-    subprocess.stderr.on('data', (data) => {
-      console.error(`stderr: ${data}`);
-    });
-
-    subprocess.on('close', (code) => {
-      if (code !== 0) {
-        console.error(`yt-dlp exited with code ${code}`);
-        res.status(500).send('Error during download.');
-      }
-    });
+    ffmpeg()
+      .input(ytdl(videoURL, { quality: 'highestaudio' }))
+      .setFfmpegPath(ffmpegPath)
+      .format('mp3')
+      .audioBitrate(128)
+      .on('error', (err) => {
+        console.error('FFmpeg error:', err.message);
+        res.status(500).send('Error during conversion');
+      })
+      .pipe(res, { end: true });
 
   } catch (err) {
     console.error(err);
-    res.status(500).send('Something went wrong.');
+    res.status(500).send('Failed to process request.');
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
