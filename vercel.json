@@ -1,18 +1,12 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "app.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "app.js"
-      }
-    ],
-    "env": {
-      "NODE_ENV": "production"
-    }
+  "version": 3,
+  "builds": [
+    { "src": "app.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "app.js" }
+  ],
+  "env": {
+    "YOUTUBE_DL_SKIP_PYTHON_CHECK": "true"
   }
+}
