@@ -1,8 +1,6 @@
 import express from 'express';
 import ytDlp from 'yt-dlp-exec'; 
 import path from 'path';
-import fs from 'fs';
-import os from 'os';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,14 +20,9 @@ app.post('/extract-audio', async (req, res) => {
         const streamIdMatch = streamLink.match(/(?:v=|\/)([0-9A-Za-z_-]{11})/);
         if (!streamIdMatch) return res.status(400).send('Invalid video URL');
 
-        const secretCookiePath = '/etc/secrets/cookies.txt';
-        const tempCookiePath = path.join(os.tmpdir(), 'cookies.txt');
-        fs.copyFileSync(secretCookiePath, tempCookiePath);
-
         // Get stream title
         let audioTitle = await ytDlp(streamLink, {
-            print: '%(title)s',
-            cookies: tempCookiePath
+            print: '%(title)s'
         });
 
         audioTitle = audioTitle.trim().replace(/[^\w\s]/gi, '').replace(/\s+/g, '_') || 'track';
@@ -39,7 +32,6 @@ app.post('/extract-audio', async (req, res) => {
 
         // Stream audio directly using yt-dlp-exec
         const audioStream = ytDlp.exec(streamLink, {
-            cookies: tempCookiePath,
             format: 'bestaudio',
             output: '-', // stream to stdout
             quiet: true
