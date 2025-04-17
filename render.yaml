@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: utubemusic
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: |
+      npm install
+      pip install -r requirements.txt
+    startCommand: node app.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: PYTHON_VERSION
+        value: 3.11.7
+      - key: PORT
+        sync: false
