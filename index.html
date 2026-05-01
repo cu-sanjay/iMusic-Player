@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Saaz Music
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+  <body class="h-full">
+    <main id="app" class="h-full w-full flex flex-col">
+      <section class="flex-1 flex overflow-hidden">
+        <aside class="w-60 bg-[var(--surface)] border-r border-[var(--border)] flex-shrink-0 flex flex-col">
+          <div class="px-5 pt-6 pb-4">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #fb2c5a, #ff7849);">
+                <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18V5l12-2v13" />
+                  <circle cx="6" cy="18" r="3" />
+                  <circle cx="18" cy="16" r="3" />
+                </svg>
+              </div>
+              <div>
+                <h1 id="app-title" class="serif text-xl font-bold leading-none">
+                  Saaz
+                </h1>
+                <p id="app-tagline" class="text-[10px] text-[var(--muted)] mt-0.5">
+                  Your Bollywood companion
+                </p>
+              </div>
+            </div>
+          </div>
+          <nav class="px-3 flex-1 overflow-y-auto scrollarea">
+            <div class="space-y-1 mb-6">
+              <button class="nav-item active w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium" data-view="home">
+                <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Home
+              </button>
+              <button class="nav-item w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium" data-view="browse">
+                <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                Browse
+              </button>
+              <button class="nav-item w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium" data-view="radio">
+                <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
+                  <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
+                  <circle cx="12" cy="12" r="2" />
+                  <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
+                  <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
+                </svg>
+                Radio
+              </button>
+            </div>
+            <div class="mb-2 px-3">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-[var(--muted)]">
+                Library
+              </p>
+            </div>
+            <div class="space-y-1 mb-6">
+              <button class="nav-item w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium" data-view="recents">
+                <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                Recently Played
+              </button>
+              <button class="nav-item w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium" data-view="favorites">
+                <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                </svg>
+                Favorites
+              </button>
+              <button class="nav-item w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium" data-view="queue">
+                <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="21" y1="6" x2="3" y2="6" />
+                  <line x1="15" y1="12" x2="3" y2="12" />
+                  <line x1="17" y1="18" x2="3" y2="18" />
+                  <polyline points="21 12 21 18 17 15" />
+                </svg>
+                Queue
+              </button>
+            </div>
+            <div class="px-3 mb-2 flex items-center justify-between">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-[var(--muted)]">
+                To-Do
+              </p>
+            </div>
+            <div class="px-3 pb-4">
+              <ul class="text-[11px] text-[var(--muted)] space-y-1.5 leading-snug">
+                <li class="flex gap-1.5">
+                  <span class="opacity-60">
+                    ◦
+                  </span>
+                  Custom playlists
+                </li>
+                <li class="flex gap-1.5">
+                  <span class="opacity-60">
+                    ◦
+                  </span>
+                  Lyrics view
+                </li>
+                <li class="flex gap-1.5">
+                  <span class="opacity-60">
+                    ◦
+                  </span>
+                  Equalizer
+                </li>
+                <li class="flex gap-1.5">
+                  <span class="opacity-60">
+                    ◦
+                  </span>
+                  Sleep timer
+                </li>
+                <li class="flex gap-1.5">
+                  <span class="opacity-60">
+                    ◦
+                  </span>
+                  Offline cache
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
+        <section class="flex-1 flex flex-col overflow-hidden relative">
+          <header class="h-14 flex-shrink-0 border-b border-[var(--border)] flex items-center px-6 gap-4 bg-[var(--bg)]">
+            <div class="flex items-center gap-1">
+              <button id="nav-back" class="btn-icon" style="width:32px;height:32px;" disabled aria-label="Back">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button id="nav-forward" class="btn-icon" style="width:32px;height:32px;" disabled aria-label="Forward">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex-1 max-w-md relative">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--muted)]" width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input id="search-input" type="text" placeholder="Search Bollywood songs, artists, albums..." class="search-input w-full pl-9 pr-4 py-2 rounded-lg text-sm text-[var(--text)] placeholder-[var(--muted)]">
+            </div>
+          </header>
+          <div id="content" class="flex-1 overflow-y-auto scrollarea">
+          </div>
+        </section>
+      </section>
+      <footer class="h-[90px] flex-shrink-0 border-t border-[var(--border)] bg-[var(--surface)] flex items-center px-4 gap-4">
+        <div class="flex items-center gap-3 w-[280px] min-w-0">
+          <div id="np-artwork" class="w-14 h-14 rounded-md overflow-hidden flex-shrink-0 artwork-placeholder">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#6b6b75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18V5l12-2v13" />
+              <circle cx="6" cy="18" r="3" />
+              <circle cx="18" cy="16" r="3" />
+            </svg>
+          </div>
+          <div class="min-w-0 flex-1">
+            <p id="np-title" class="text-sm font-semibold truncate">
+              Nothing playing
+            </p>
+            <p id="np-artist" class="text-xs text-[var(--muted)] truncate">
+              Pick a track to begin
+            </p>
+          </div>
+          <button id="np-fav" class="btn-icon flex-shrink-0" style="width:32px;height:32px;" aria-label="Favorite">
+            <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-1.5 max-w-[600px] mx-auto">
+          <div class="flex items-center gap-1">
+            <button id="shuffle-btn" class="btn-icon" style="width:32px;height:32px;" aria-label="Shuffle">
+              <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 3 21 3 21 8" />
+                <line x1="4" y1="20" x2="21" y2="3" />
+                <polyline points="21 16 21 21 16 21" />
+                <line x1="15" y1="15" x2="21" y2="21" />
+                <line x1="4" y1="4" x2="9" y2="9" />
+              </svg>
+            </button>
+            <button id="prev-btn" class="btn-icon" style="width:36px;height:36px;" aria-label="Previous">
+              <svg width="18" height="18" viewbox="0 0 24 24" fill="currentColor">
+                <path d="M6 6h2v12H6zM9.5 12l8.5 6V6z" />
+              </svg>
+            </button>
+            <button id="play-btn" class="btn-icon" style="width:40px;height:40px; background: var(--text); color: var(--bg);" aria-label="Play">
+              <svg id="play-icon" width="18" height="18" viewbox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <svg id="pause-icon" width="18" height="18" viewbox="0 0 24 24" fill="currentColor" style="display:none;">
+                <path d="M6 5h4v14H6zm8 0h4v14h-4z" />
+              </svg>
+              <div id="play-loader" class="spinner" style="display:none;">
+              </div>
+            </button>
+            <button id="next-btn" class="btn-icon" style="width:36px;height:36px;" aria-label="Next">
+              <svg width="18" height="18" viewbox="0 0 24 24" fill="currentColor">
+                <path d="M6 18l8.5-6L6 6v12zM16 6h2v12h-2z" />
+              </svg>
+            </button>
+            <button id="repeat-btn" class="btn-icon" style="width:32px;height:32px;" aria-label="Repeat">
+              <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="17 1 21 5 17 9" />
+                <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                <polyline points="7 23 3 19 7 15" />
+                <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+              </svg>
+            </button>
+          </div>
+          <div class="w-full flex items-center gap-3">
+            <span id="current-time" class="text-[11px] text-[var(--muted)] tabular-nums w-9 text-right">
+              0:00
+            </span>
+            <div class="progress-track flex-1" id="progress-track">
+              <div class="progress-fill" id="progress-fill">
+                <div class="progress-thumb">
+                </div>
+              </div>
+            </div>
+            <span id="total-time" class="text-[11px] text-[var(--muted)] tabular-nums w-9">
+              0:00
+            </span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 w-[280px] justify-end">
+          <button id="queue-toggle" class="btn-icon" style="width:32px;height:32px;" aria-label="Queue">
+            <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="21" y1="6" x2="3" y2="6" />
+              <line x1="15" y1="12" x2="3" y2="12" />
+              <line x1="17" y1="18" x2="3" y2="18" />
+              <polyline points="21 12 21 18 17 15" />
+            </svg>
+          </button>
+          <button id="mute-btn" class="btn-icon" style="width:32px;height:32px;" aria-label="Mute">
+            <svg id="vol-icon-high" width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            </svg>
+            <svg id="vol-icon-mute" width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <line x1="23" y1="9" x2="17" y2="15" />
+              <line x1="17" y1="9" x2="23" y2="15" />
+            </svg>
+          </button>
+          <div class="volume-track" id="volume-track">
+            <div class="volume-fill" id="volume-fill">
+            </div>
+          </div>
+        </div>
+      </footer>
+      <audio id="audio-el" preload="metadata">
+      </audio>
+    </main>
+    <div id="toast" class="toast">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
