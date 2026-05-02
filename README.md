@@ -1,14 +1,24 @@
-# 🎵 Saaz Music
+<div align="center">
+  <img src="icon.png" width="100" alt="Saaz Music Logo"/>
+
+  # 🎵 Saaz Music (via iTunes API)
+</div>
 
 <div align="center">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
-  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/Version-2.0.1-blue" alt="Version">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
 </div>
 
 <div align="center">
-  <h3>Your Ultimate Bollywood Music Companion</h3>
-  <p>A beautiful, responsive web-based music player designed for Bollywood enthusiasts. Stream your favorite Hindi songs with an intuitive interface inspired by modern music apps.</p>
+  <h3>Your Bollywood Music Player</h3>
+  <p>
+    Saaz Music is a simple and clean web music player for Hindi songs.  
+    You can explore songs, play music, and enjoy a smooth experience like modern music apps.
+  </p>
+  <p>
+    It uses the iTunes API, which provides only 30-second previews of songs.
+  </p>
 </div>
 
 ## ✨ Features
@@ -17,59 +27,36 @@
   <table>
     <tr>
       <td align="center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fb2c5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 18V5l12-2v13"/>
-          <circle cx="6" cy="18" r="3"/>
-          <circle cx="18" cy="16" r="3"/>
-        </svg>
+        <img src="https://img.icons8.com/fluency/40/music.png"/>
         <br><strong>Home</strong>
-        <br>Curated playlists and recommendations
+        <br>View playlists and suggestions
       </td>
       <td align="center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fb2c5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.3-4.3"/>
-        </svg>
+        <img src="https://img.icons8.com/fluency/40/search.png"/>
         <br><strong>Browse</strong>
-        <br>Explore by categories and artists
+        <br>Search songs and artists
       </td>
       <td align="center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fb2c5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/>
-          <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/>
-          <circle cx="12" cy="12" r="2"/>
-          <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/>
-          <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/>
-        </svg>
+        <img src="https://img.icons8.com/fluency/40/radio.png"/>
         <br><strong>Radio</strong>
-        <br>Continuous music streaming
+        <br>Play songs continuously
       </td>
     </tr>
     <tr>
       <td align="center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fb2c5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <polyline points="12 6 12 12 16 14"/>
-        </svg>
+        <img src="https://img.icons8.com/fluency/40/time-machine.png"/>
         <br><strong>Recently Played</strong>
-        <br>Quick access to your listening history
+        <br>Check your recent songs
       </td>
       <td align="center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fb2c5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-        </svg>
+        <img src="https://img.icons8.com/fluency/40/like.png"/>
         <br><strong>Favorites</strong>
-        <br>Save and organize your favorite tracks
+        <br>Save songs you like
       </td>
       <td align="center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fb2c5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="21" y1="6" x2="3" y2="6"/>
-          <line x1="15" y1="12" x2="3" y2="12"/>
-          <line x1="17" y1="18" x2="3" y2="18"/>
-          <polyline points="21 12 21 18 17 15"/>
-        </svg>
+        <img src="https://img.icons8.com/fluency/40/list.png"/>
         <br><strong>Queue</strong>
-        <br>Manage your playback queue
+        <br>Manage upcoming songs
       </td>
     </tr>
   </table>
@@ -77,64 +64,55 @@
 
 ## 🎶 Browse Categories
 
-- **Bollywood** - Latest Hindi hits
-- **Arijit Singh** - Soulful melodies
-- **A.R. Rahman** - Musical genius
-- **Romantic** - Love songs collection
-- **Punjabi** - Bhangra beats
-- **Classical** - Traditional Indian music
-- **Sufi** - Spiritual Hindi music
-- **Devotional** - Bhajans and devotional songs
-- **Retro** - Golden era classics
+- **Bollywood** - Latest Hindi songs  
+- **Arijit Singh** - Popular romantic songs  
+- **A.R. Rahman** - Famous music composer  
+- **Romantic** - Love songs  
+- **Punjabi** - Energetic beats  
+- **Classical** - Traditional music  
+- **Sufi** - Spiritual songs  
+- **Devotional** - Bhajans and prayers  
+- **Retro** - Old classic songs  
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- A modern web browser
-- Internet connection for streaming
+- Any modern web browser  
+- Internet connection  
 
 ### Usage
-- **Home**: Discover curated playlists
-- **Browse**: Search and explore music by category
-- **Radio**: Enjoy continuous playback
-- **Library**: Access your favorites and recently played tracks
+- **Home**: View playlists  
+- **Browse**: Search songs  
+- **Radio**: Continuous music  
+- **Library**: Favorites and history  
 
 ## 🛠️ Technologies Used
 
 <div align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
 </div>
 
 ## 🎨 Design Features
 
-- **Dark Theme**: Modern dark interface for comfortable listening
-- **Responsive Design**: Optimized for desktop and mobile devices
-- **Intuitive Navigation**: Easy-to-use sidebar navigation
-- **Smooth Animations**: Fluid transitions and interactions
-- **Custom Icons**: Beautiful SVG icons throughout the interface
+- Dark theme for comfortable use  
+- Works on mobile and desktop  
+- Simple and clean layout  
+- Smooth animations  
+- Icon-based design  
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+You can contribute to improve this project.
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the project  
+2. Create a new branch  
+3. Make your changes  
+4. Push the code  
+5. Create a Pull Request  
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-<div align="center">
-  <p>Made with ❤️ for Bollywood music lovers</p>
-  <p>
-    <a href="#-saaz-music">Back to top</a>
-  </p>
-</div>
+This project is licensed under the MIT License.
