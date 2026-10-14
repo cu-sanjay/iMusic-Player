@@ -1,24 +1,39 @@
 const state = {
-  view: 'home',
-  viewHistory: ['home'],
-  viewIndex: 0,
-  currentTrack: null,
-  queue: [],
-  originalQueue: [],
-  queueIndex: -1,
-  isPlaying: false,
-  isLoading: false,
-  volume: 0.7,
-  prevVolume: 0.7,
-  shuffle: false,
-  repeat: 'off',
-  favorites: [],
-  recents: [],
-  browseCategory: 'bollywood',
-  cache: {},
-  searchResults: [],
-  searchDebounce: null,
-  audio: document.getElementById('audio-el')
+    // Navigation
+    view: 'home',
+    viewHistory: ['home'],
+    viewIndex: 0,
+
+    // Current track and playback queue
+    currentTrack: null,
+    queue: [],
+    originalQueue: [],
+    queueIndex: -1,
+
+    // Playback status
+    isPlaying: false,
+    isLoading: false,
+
+    // Audio settings
+    volume: 0.7,
+    prevVolume: 0.7,
+    shuffle: false,
+    repeat: 'off',
+
+    // User library
+    favorites: [],
+    recents: [],
+
+    // Browse and search
+    browseCategory: 'bollywood',
+    searchResults: [],
+    searchDebounce: null,
+
+    // Track cache
+    cache: {},
+
+    // Audio element
+    audio: document.getElementById('audio-el')
 };
 
 const BROWSE_CATEGORIES = [
